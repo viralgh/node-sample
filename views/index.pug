@@ -1,0 +1,38 @@
+include /header.pug
+
+<table id="country_list" class="display" cellspacing="0" width="100%">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>ISO2</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+        </thead>
+ 
+<tfoot>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>ISO2</th>
+                <th>Delete</th>
+                <th>Edit</th>
+            </tr>
+</tfoot>
+ 
+        <tbody>
+            
+each onjec in rows
+    tr
+        td #{onjec.id}
+        td #{onjec.name}
+        td #{onjec.iso2}
+        td: a(href='#').delete.btn.btn-danger.btn-sm(data-id=onjec.id) Delete
+        td: a(href='#').edit.btn.btn-warning.btn-sm(data-id=onjec.id) Edit
+            
+            
+</tbody>
+</table>
+
+script(src='/page_includes/index.js', type='text/javascript')
